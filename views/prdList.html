@@ -1,0 +1,40 @@
+    <br><br><br>
+    <!-- Content -->
+    <table class="table table-sm table-hover table-secondary mt-5">
+        <thead>            
+            <th>ID</th>
+            <th>Producto</th>
+            <th>Detalle</th>
+            <th>Precio</th>
+            <th>Stockmin</th>
+            <th>Stockmax</th>
+            <th>En Stock</th>
+        </thead>
+                   
+        <tr ng-repeat="product in ListPrd | filter:$ctrl.query">
+            <td>{{product.code}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.detail}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.stockmin}}</td>
+            <td>{{product.stockmax}}</td>
+            <td>{{product.active}}</td>
+            <td>
+                <a type="button" class="btn btn-secondary" ng-click="delPrd()">
+                    <i class="far fa-trash-alt"></i>           
+                </a> 
+            </td>
+        </tr>    
+        </table>
+        
+        <div class="form-row">            
+            <div class="col-md-1">
+                <a type="button" class="btn btn-secondary btn-block" href="#!/addproduct">
+                    <i class="fas fa-plus-circle fa-2x"></i> 
+                </a> 
+            </div>
+            <div class="col-md-8 input-group input-group-lg">
+                <span class="input-group-text">Search: </span>
+                <input class="form-control" ng-model="$ctrl.query"/>
+            </div>
+        </div>      

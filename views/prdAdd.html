@@ -1,0 +1,47 @@
+<br><br><br><br>
+<div class="bg-dark text-white mt-2 p-3 round-edge">
+    <h2 class="m-2">Agregar un Producto</h2>
+    <div class="form-row m-2 pt-2">
+        <div class="form-group col-md-4">
+            <label for="code" class="pt-1">ID:</label>
+            <input type="text" class="form-control" ng-model="product.code" placeholder="Codigo del Producto">
+        </div>
+        
+        <div class="form-group col-md-8">
+            <label for="name" class="pt-1">Producto:</label>
+            <input type="text" class="form-control" ng-model="product.name" placeholder="Nombre del Producto">
+        </div>
+        
+        <label for="detail" class="pt-3 ml-1">Detalle:</label>
+        <input type="text" class="form-control ml-1" ng-model="product.detail" placeholder="Detalle del Producto">
+        
+        <div class="form-group col-md-4 pt-3">
+            <label for="price" class="pt-3">Precio:</label>
+            <input type="text" class="form-control" ng-model="product.price" placeholder="Precio del Producto">
+        </div>
+        
+        <div class="form-group col-md-4 pt-3">
+            <label for="stockmin" class="pt-3">Stock Minimo:</label>
+            <input type="text" class="form-control" ng-model="product.stockmin" placeholder="Stock Minimo del Producto">
+        </div>
+        
+        <div class="form-group col-md-4 pt-3">
+            <label for="stockmax" class="pt-3">Stock Maximo:</label>
+            <input type="text" class="form-control" ng-model="product.stockmax" placeholder="Stock Maximo del Producto">
+        </div>
+        
+        <label for="active" class="pt-3 ml-1">Stock: (Si/No)</label>
+        <select class="form-control ml-1" ng-model="product.active">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select>
+        
+        <div class="btn-group pt-5  ">
+            <a type="button" class="btn btn-success" ng-click="addPrd()">Guardar</a>
+            <a type="button" class="btn btn-warning ml-1" href="#!/productlist">Volver a la Lista</a>
+        </div>
+    </div>
+</div>
+
+
+
