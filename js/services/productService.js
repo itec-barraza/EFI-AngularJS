@@ -20,7 +20,7 @@ angular.module('appmain')
             window.localStorage.setItem('productos',JSON.stringify(listProducts));
         },
         deleteProduct: function (msg) {
-            listProducts.pop(msg);
+            listProducts.splice(msg,1);
             window.localStorage.setItem('productos',JSON.stringify(listProducts));
         }
     }

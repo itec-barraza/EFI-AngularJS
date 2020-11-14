@@ -20,7 +20,7 @@
             <td>{{product.stockmax}}</td>
             <td>{{product.active}}</td>
             <td>
-                <a type="button" class="btn btn-secondary" ng-click="delPrd()">
+                <a type="button" class="btn btn-secondary" ng-click="delPrd($index)">  <!-- $index sirve en la lista completa, pero en la lista filtrada borra el equivocado  -->
                     <i class="far fa-trash-alt"></i>           
                 </a> 
             </td>
