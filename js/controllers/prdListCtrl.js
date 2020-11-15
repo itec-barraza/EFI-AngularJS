@@ -7,7 +7,9 @@ angular.module('appmain')
     
     
     $scope.delPrd = function(producto){
-        serPrd.deleteProduct(producto)
+        var index = $scope.ListPrd.indexOf(producto);        
+        console.log('Borrando producto' ,producto.name);
+        serPrd.deleteProduct(index);
     }
     console.log('Cargando Lista', $scope.ListPrd = serPrd.getProducts()) //error de ng-repeat a veces, le agrega un hash key al objeto producto ??
 }])
