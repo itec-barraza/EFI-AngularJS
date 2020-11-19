@@ -4,7 +4,7 @@ angular.module('appmain')
     console.log('Iniciando LoginCtrl');
     
     $scope.user = {name: '', pwd: ''};
-    $scope.saludo = '';
+    
     
     $scope.login = function(){
         if (logSrv.userAuth($scope.user)){
@@ -15,12 +15,16 @@ angular.module('appmain')
 
     $scope.usrdelete = function(){
         logSrv.deleteUser($scope.user)
-        $location.path('/');        
+        $location.path('/');   
     }
 
-    //Actualiza cuando se actualiza la pagina por ??? motivo      
-    if (logSrv.getUser()){ 
-            $scope.saludo = 'Bienvenido ' +logSrv.getUser().name;  
-            $scope.logout = 'Logout '
-        }
+    $scope.saludo = function(){
+        if (logSrv.getUser()) 
+            return 'Bienvenido ' +logSrv.getUser().name;    
+    }
+    $scope.logout = function(){
+        if (logSrv.getUser())
+            return 'Logout ';
+    }
+    
 }]);
